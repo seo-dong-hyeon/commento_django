@@ -109,10 +109,10 @@ def create_education(request):
 	education = Education()
 	education.user = request.user
 	education.school = request.POST['school']
-	education.degree = request.POST['degree']
+	education.major = request.POST.get('major')
 	education.startDate = request.POST['start']
 	education.endDate = request.POST['end']
-	education.description = request.POST['description']
+	education.gpa = request.POST.get('gpa')
 	education.save()
 	return HttpResponseRedirect(reverse('resume:education'))
 
@@ -120,10 +120,10 @@ def update_education(request):
 	id = request.POST['id']
 	education =get_object_or_404(Education, id=id)
 	education.school = request.POST['school']
-	education.degree = request.POST['degree']
+	education.major = request.POST.get('major')
 	# education.startDate = request.POST['start']
 	# education.endDate = request.POST['end']
-	education.description = request.POST['description']
+	education.gpa = request.POST.get('gpa')
 	education.save()
 	return HttpResponseRedirect(reverse('resume:education'))
 

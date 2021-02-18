@@ -22,13 +22,13 @@
 						</p>
 						<h2>전공</h2>
 						<p>
-							<input type="text" name="degree" value="{{education.major}}">
+							<input type="text" name="major" value="{{education.major}}">
 						</p>
-						<h2>Start Date</h2>
+						<h2>시작일</h2>
 						<p>
 							<input type="text" name="start" value="{{education.startDate}}">
 						</p>
-						<h2>End Date</h2>
+						<h2>종료일</h2>
 						<p>
 							<input type="text" name="end" value="{{education.endDate}}">
 						</p>
@@ -44,25 +44,25 @@
 					<form action="{% url 'resume:create_education' %}" method="POST">
 						{% csrf_token %}
 						<button class="btn">Add to your educations</button>
-						<h2>School Name</h2>
+						<h2>학교명</h2>
 						<p>
 							<input type="text" name="school" value="">
 						</p>
-						<h2>Degree</h2>
+						<h2>전공</h2>
 						<p>
-							<input type="text" name="degree" value="">
+							<input type="text" name="major" value="">
 						</p>
-						<h2>Start Date</h2>
+						<h2>시작일</h2>
 						<p>
 							<input type="date" name="start" value="">
 						</p>
-						<h2>End Date</h2>
+						<h2>종료일</h2>
 						<p>
 							<input type="date" name="end" value="">
 						</p>
-						<h2>Description</h2>
+						<h2>학점</h2>
 						<p>
-							<textarea name="description"  maxlength="300"></textarea>
+							<input type="text" name="gpa" value="">
 						</p>
 					</form>
 				</div>
