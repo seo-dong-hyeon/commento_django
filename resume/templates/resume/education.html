@@ -16,13 +16,13 @@
 						<a class="btn delete" href="education/delete_education/{{education.id}}">
 							<i class="fa fa-trash" aria-hidden="true"></i>
 						</a>
-						<h2>School Name</h2>
+						<h2>학교명</h2>
 						<p>
 							<input type="text" name="school" value="{{education.school}}">
 						</p>
-						<h2>Degree</h2>
+						<h2>전공</h2>
 						<p>
-							<input type="text" name="degree" value="{{education.degree}}">
+							<input type="text" name="degree" value="{{education.major}}">
 						</p>
 						<h2>Start Date</h2>
 						<p>
@@ -32,9 +32,9 @@
 						<p>
 							<input type="text" name="end" value="{{education.endDate}}">
 						</p>
-						<h2>Description</h2>
+						<h2>학점</h2>
 						<p>
-							<textarea name="description"  maxlength="300">{{education.description}}</textarea>
+							<input type="text" name="gpa" value="{{education.gpa}}">
 						</p>
 						<input name="id" value="{{education.id}}" hidden>
 					</form>

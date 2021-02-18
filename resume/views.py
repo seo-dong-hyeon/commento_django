@@ -227,14 +227,16 @@ def generate_resume(request, *args, **kwargs):
 		return response
 	return HttpResponse('PDF not found')
 
-
 def generate_resume_site(request, *args, **kwargs):
+	user = request.user
 	profile = get_object_or_404(UserProfile, user=request.user)
 	experiences = Experience.objects.filter(user=request.user)
 	educations = Education.objects.filter(user=request.user)
 	skills = Skill.objects.filter(user=request.user)
 	context = {
 		'full_name': request.user.first_name + ' '  + request.user.last_name,
+		'phone':profile.phone,
+		'email': user.email,
 		'profession': profile.profession,
 		'about_me': profile.bio,
 		'experiences': experiences,

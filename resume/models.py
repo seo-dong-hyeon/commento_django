@@ -16,10 +16,10 @@ class Experience(models.Model):
 class Education(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, default='')
 	school = models.CharField(max_length=200)
-	degree = models.CharField(max_length=200)
+	major = models.CharField(max_length=200, default = '')
 	startDate = models.DateField()
 	endDate = models.DateField()
-	description = models.CharField(max_length=500)
+	gpa = models.CharField(max_length=200, default = '')
 
 	def __str__(self):
 		return self.school
